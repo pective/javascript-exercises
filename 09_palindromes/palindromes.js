@@ -1,15 +1,13 @@
 
 const palindromes = function ( str ) {
-    let cleanStr = str.replace(/[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g, '');
-    cleanStr = cleanStr.replace(/\s+/g, '');
-    let lowStr = cleanStr.toLowerCase();
+    let cleanStr = str
+    .replace(/[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g, '')
+    .replace(/\s+/g, '')
+    .toLowerCase();
     
-    let revStr = lowStr.split('').reverse().join('')
+    let revStr = cleanStr.split('').reverse().join('')
 
-    // console.log(str);
-    // console.log(revStr);
-
-    if ( revStr === lowStr) {
+    if ( revStr === cleanStr) {
         return true;
     } else return false;
 };
